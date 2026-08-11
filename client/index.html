@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="authSection">
+
+        <div id="loginSection">
+            <h1>Login</h1>
+
+            <input
+                type="email"
+                id="emailInput"
+                placeholder="Email"
+            >
+
+            <input
+                type="password"
+                id="passwordInput"
+                placeholder="Password"
+            >
+
+            <button id="loginBtn">
+                Login
+            </button>
+
+            <p>
+                Don't have an account?
+                <button id="showRegisterBtn">
+                    Register
+                </button>
+            </p>
+
+            <p id="loginMessage"></p>
+        </div>
+
+        <div id="registerSection" style="display: none;">
+            <h1>Create Account</h1>
+
+            <input
+                type="text"
+                id="registerName"
+                placeholder="Name"
+            >
+
+            <input
+                type="email"
+                id="registerEmail"
+                placeholder="Email"
+            >
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Password"
+            >
+
+            <button id="registerBtn">
+                Register
+            </button>
+
+            <p>
+                Already have an account?
+                <button id="showLoginBtn">
+                    Login
+                </button>
+            </p>
+
+            <p id="registerMessage"></p>
+        </div>
+
+    </div>
+
+
+    <div id="taskSection" style="display: none;">
+
+        <h1>Task Manager</h1>
+
+        <label for="taskInput">
+            Task
+        </label>
+
+        <input
+            type="text"
+            id="taskInput"
+            placeholder="Enter a new task"
+        >
+
+
+        <div id="aiSection">
+
+            <button id="askAiBtn">
+                ✨ Ask AI
+            </button>
+
+            <div id="aiResult"></div>
+
+        </div>
+
+
+        <label for="dueDateInput">
+            Due Date
+        </label>
+
+        <input
+            type="datetime-local"
+            id="dueDateInput"
+        >
+
+
+        <label for="reminderInput">
+            Reminder Date & Time
+        </label>
+
+        <input
+            type="datetime-local"
+            id="reminderInput"
+        >
+
+
+        <button id="addTaskBtn">
+            Add Task
+        </button>
+
+
+        <div id="taskStats">
+
+            <span id="totalCount">
+                Total: 0
+            </span>
+
+            <span id="pendingCount">
+                Pending: 0
+            </span>
+
+            <span id="completedCount">
+                Completed: 0
+            </span>
+
+        </div>
+
+
+        <div id="filters">
+
+            <button data-filter="all">
+                All
+            </button>
+
+            <button data-filter="pending">
+                Pending
+            </button>
+
+            <button data-filter="completed">
+                Completed
+            </button>
+
+        </div>
+
+
+        <ul id="taskList"></ul>
+
+
+        <button id="logoutBtn">
+            Logout
+        </button>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
