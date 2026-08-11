@@ -1,4 +1,6 @@
-const API_URL = "http://localhost:3000";
+// The frontend is served by the same Express app in production.
+// Set window.API_URL before this script only when deploying it separately.
+const API_URL = window.API_URL || "";
 
 const loginSection = document.getElementById("loginSection");
 const registerSection = document.getElementById("registerSection");
@@ -304,7 +306,12 @@ function formatAIResponse(text) {
         `;
     }
 
-    let formatted = text;
+    let formatted = text
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
 
     // Remove markdown bold
     formatted = formatted.replace(/\*\*/g, "");
